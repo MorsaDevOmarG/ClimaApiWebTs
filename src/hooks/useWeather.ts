@@ -3,7 +3,7 @@ import axios from "axios";
 import { z } from "zod";
 // import { object, string, number, Output, parse } from 'valibot';
 import { SearchType } from "../types";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 // unknown: desconocido, representa un valor cuyo tipo no conoces en el tiempo de compilación (TYPE GUARDS)
 // function isWeatherResponse(weather : unknown) : weather is Weather {
@@ -111,8 +111,11 @@ export default function useWeather() {
     }
   };
 
+  const hasWeatherData = useMemo(() => weather.name, [weather]);
+
   return {
     weather,
-    fetchWeather
+    fetchWeather,
+    hasWeatherData
   };
 }
