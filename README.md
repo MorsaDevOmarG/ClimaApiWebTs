@@ -24,4 +24,6 @@
   - Tipografía:
     - _Outfit_
   - Se configura en el **index.html**
+- Axios - Consumo de API
+  - **_npm i axios_**
 

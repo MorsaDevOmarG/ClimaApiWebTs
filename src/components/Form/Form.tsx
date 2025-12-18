@@ -5,7 +5,8 @@ import type { SearchType } from "../../types";
 import Alert from "../Alert/Alert";
 
 type FormProps = {
-  fetchWeather: () => void
+  // fetchWeather: () => void
+  fetchWeather: (search: SearchType) => Promise<void>
 };
 
 export default function Form({ fetchWeather } : FormProps) {
@@ -36,7 +37,7 @@ export default function Form({ fetchWeather } : FormProps) {
     }
 
     // Aquí mandamos llamar la función de la API
-    fetchWeather();
+    fetchWeather(search);
   };
 
   return (

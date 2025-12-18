@@ -20,6 +20,10 @@
   -o-border-radius: 1rem;
 }
 
+.form select option {
+  color: #000;
+}
+
 .field ::placeholder {
   color: var(--white);
 }
