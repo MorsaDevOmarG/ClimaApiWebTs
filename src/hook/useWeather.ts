@@ -24,6 +24,7 @@ export default function useWeather() {
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`;
       const { data: weatherResult } = await axios(weatherUrl);
       console.log(weatherResult);
+      console.log(weatherResult.main.temp);
 
     } catch (error) {
       console.log(error);
