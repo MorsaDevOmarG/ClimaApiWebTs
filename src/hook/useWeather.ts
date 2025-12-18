@@ -10,12 +10,21 @@ export default function useWeather() {
     const appId = import.meta.env.VITE_API_KEY;
 
     try {
-      // const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}`;
+      // Geocoding API - const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}`;
       const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${appId}`;
       // console.log(geoUrl);
 
       const { data } = await axios(geoUrl);
-      console.log(data);
+      // console.log(data);
+
+      const lat = data[0].lat;
+      const lon = data[0].lon;
+
+      // Current Weather Data - const watherURL = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
+      const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`;
+      const { data: weatherResult } = await axios(weatherUrl);
+      console.log(weatherResult);
+
     } catch (error) {
       console.log(error);
     }
