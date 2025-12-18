@@ -36,5 +36,9 @@
     - VITE_API_KEY=VALOR A ASIGNAR
   - Y al llamarla o usarla, lo hacemos así, ejemplo:
     - **const appId = import.meta.env.VITE_API_KEY;**
--
+  - Opciones de uso en las _API'S_
+    - _Type Guards_
+    - _ZOD_
+      - **_npm i zod_**
+    - _Voli_
 
