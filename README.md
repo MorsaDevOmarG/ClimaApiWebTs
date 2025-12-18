@@ -26,4 +26,15 @@
   - Se configura en el **index.html**
 - Axios - Consumo de API
   - **_npm i axios_**
+- Variables de entorno
+  - _https://vite.dev/guide/env-and-mode_
+  - Se utilizó: 
+    - **import.meta.env.NOMBREVARIABLE**
+  - En base a la documentación, se creo un archivo llamado:
+    - **_.env.local_**
+  - Dentro de él, se creo la variable, importante mencionar que como es de _VITE_, las variables que se crean deben llevar _VITE_, ejemplo:
+    - VITE_API_KEY=VALOR A ASIGNAR
+  - Y al llamarla o usarla, lo hacemos así, ejemplo:
+    - **const appId = import.meta.env.VITE_API_KEY;**
+-
 
