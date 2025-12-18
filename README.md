@@ -28,7 +28,7 @@
   - **_npm i axios_**
     - ## Opciones de uso en las _API'S_
       - _Type Guards_
-      - _ZOD_
+      - _ZOD_ (Opción usada en este proyecto)
         - **_npm i zod_**
       - _Volibot_
         - **_npm i valibot_**
