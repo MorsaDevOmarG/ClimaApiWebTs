@@ -50,12 +50,15 @@ export default function useWeather() {
       temp_min: 0
     }
   });
+  const [loading, setLoading] = useState(false);
 
   const fetchWeather = async (search: SearchType) => {
     // console.log('Consultando...');
 
     // const appId = "24b6bad0cf51efb21e488f10ea0f2d2d";
     const appId = import.meta.env.VITE_API_KEY;
+
+    setLoading(true);
 
     try {
       // Geocoding API - const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}`;
@@ -108,6 +111,8 @@ export default function useWeather() {
 
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -115,6 +120,7 @@ export default function useWeather() {
 
   return {
     weather,
+    loading,
     fetchWeather,
     hasWeatherData
   };

@@ -42,5 +42,8 @@
     - VITE_API_KEY=VALOR A ASIGNAR
   - Y al llamarla o usarla, lo hacemos así, ejemplo:
     - **const appId = import.meta.env.VITE_API_KEY;**
+- SPINNERS 
+  - Para mostrar algo cuando esta cargando
+  - _https://tobiasahlin.com/spinkit/_
     
 
